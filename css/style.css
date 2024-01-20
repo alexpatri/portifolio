@@ -309,6 +309,15 @@ svg {
     cursor: default;
 }
 
+.init-hidden {
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+
+.init-hidden-off {
+    opacity: 1;
+}
+
 footer {
     background: var(--color-blue);
     padding: 2rem 20rem;
