@@ -1,9 +1,9 @@
 const observer = new IntersectionObserver(entris => {
     Array.from(entris).forEach(entry => {
-        if(entry.intersectionRatio >= 0.5) entry.target.classList.add('init-hidden-off');
+        if(entry.intersectionRatio >= 0.25) entry.target.classList.add('init-hidden-off');
     })
 }, {
-    threshold: 0.5,
+    threshold: 0.25,
 });
 
 Array.from(document.querySelectorAll('.init-hidden')).forEach( element => {
