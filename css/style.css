@@ -42,20 +42,21 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: .5rem 20rem;
+    padding: 1rem 20rem;
     z-index: 2;
     transition: .5s;
 }
 
 nav.scroll {
     background: var(--color-blue);
-    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--box-shadow);
+    padding: .3rem 20rem;
 }
 
 .logo {
     color: #FFF;
     font-family: var(--font-title);
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -91,6 +92,7 @@ nav ul li {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 
 .cv:hover {
@@ -99,14 +101,30 @@ nav ul li {
     text-decoration: none;
 }
 
-nav a {
+nav .nav-link {
     color: inherit;
     text-decoration: none;
+    position: relative;
+    padding: .5rem 0;
+}
+
+nav .nav-link::after {
+    content: " ";
+    width: 0%;
+    height: 2px;
+    background: var(--color-grayish-white);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: .2s ease-in-out;
 }
 
 nav a:hover {
     color: var(--color-grayish-white);
-    text-decoration: underline;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 .hamburger {
@@ -192,7 +210,7 @@ main {
 }
 
 .section {
-    padding: 5.75rem 20rem;
+    padding: 5rem 20rem;
     display: flex;
     flex-direction: column;
     font-family: var(--font-title);
@@ -332,17 +350,26 @@ footer p {
 
 @media (max-width: 768px) {
     nav {
-        padding: .5rem 2rem;
+        padding: 1rem 2rem;
+    }
+
+    nav a {
+        padding: 0;
+    }
+
+    nav.scroll {
+
+    padding: .25rem 2rem;
     }
 
     .nav-menu {
         position: fixed;
         right: -100%;
-        top: 4.5rem;
+        top: 4rem;
         gap: 0;
         flex-direction: column;
         width: 50%;
-        padding-bottom: 1rem;
+        padding: 1rem 0;
         transition: .5s;
     }
 
